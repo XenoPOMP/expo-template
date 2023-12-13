@@ -1,10 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
+import HelloWorld from '@/components/HelloWorld';
+
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text className={'text-[1.25em] font-bold'}>Hello world!</Text>
+      <HelloWorld className={'text-red-500'} />
 
       <StatusBar style='auto' />
     </View>
