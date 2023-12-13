@@ -5,19 +5,10 @@ import HelloWorld from './app/components/HelloWorld';
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <View className={'bg-white'}>
       <HelloWorld className={'text-red-500'} />
 
       <StatusBar style='auto' />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
