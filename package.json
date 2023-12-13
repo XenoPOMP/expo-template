@@ -1,0 +1,9 @@
+{
+  "name": "expo-template",
+  "version": "0.0.0-beta",
+  "description": "Template for React Native application, powered by Expo framework.",
+  "main": "index.js",
+  "author": "xeno_pomp",
+  "license": "MIT",
+  "private": true
+}
