@@ -1,14 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { View } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-import HelloWorld from './app/components/HelloWorld';
+import { HelloWorld } from '@/components';
+import { Application } from '@/layout';
 
 export default function App() {
   return (
-    <View className={'bg-white'}>
-      <HelloWorld className={'text-red-500'} />
-
-      <StatusBar style='auto' />
-    </View>
+    <SafeAreaProvider>
+      <Application />
+    </SafeAreaProvider>
   );
 }
