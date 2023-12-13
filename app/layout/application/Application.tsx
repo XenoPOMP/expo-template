@@ -5,13 +5,14 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { HelloWorld } from '@/components';
 
 const Application = () => {
-  const { top } = useSafeAreaInsets();
+  const { top, bottom } = useSafeAreaInsets();
 
   return (
     <View
       className={'bg-purple-950 h-full'}
       style={{
         paddingTop: top,
+        paddingBottom: bottom,
       }}
     >
       <HelloWorld className={'text-white'} />
