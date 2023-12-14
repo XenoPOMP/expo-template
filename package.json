@@ -8,6 +8,7 @@
     "start": "expo start",
     "start:dev": "expo start --clear",
     "android": "expo start --android",
+    "android:dev": "expo start --android --clear",
     "ios": "expo start --ios",
     "web": "expo start --web"
   },
