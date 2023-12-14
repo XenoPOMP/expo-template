@@ -9,8 +9,8 @@ export type AppSettings = {
 };
 
 const initialState: AppSettings = {
-  appVersion: '2.0.0',
-  appName: 'React Vite Application',
+  appVersion: '1.0.0',
+  appName: 'React Native + Expo App',
   language: 'en',
 };
 
