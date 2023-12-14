@@ -17,7 +17,7 @@ const Application = () => {
         paddingBottom: bottom,
       }}
     >
-      <HelloWorld className={'text-white'} />
+      <HelloWorld />
 
       <StatusBar style='auto' />
     </View>
