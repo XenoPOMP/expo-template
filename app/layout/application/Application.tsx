@@ -6,7 +6,7 @@ import { useCallback } from 'react';
 import { View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import { HomeScreen, SettingsScreen } from '@/screens';
+import Navigation from '@/navigation/Navigation';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -47,6 +47,8 @@ const Application = () => {
         paddingRight: right,
       }}
     >
+      <Navigation />
+
       <StatusBar style='auto' />
     </View>
   );
