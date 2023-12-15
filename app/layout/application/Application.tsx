@@ -40,7 +40,7 @@ const Application = () => {
   return (
     <View
       onLayout={onLayoutRootView}
-      className={cn('bg-purple-950 h-full', flexCenter)}
+      className={cn('bg-purple-950 h-full')}
       style={{
         // paddingTop: top,
         // paddingBottom: bottom,
