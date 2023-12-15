@@ -1,9 +1,8 @@
 import cn from 'classnames';
 import { StatusBar } from 'expo-status-bar';
-import { View } from 'react-native';
+import { Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import { HelloWorld } from '@/components';
 import { flexCenter } from '@/styles/tailwind/utilities';
 
 const Application = () => {
@@ -17,7 +16,9 @@ const Application = () => {
         paddingBottom: bottom,
       }}
     >
-      <HelloWorld />
+      <Text className={'text-3xl font-bold text-yellow-500 italic'}>
+        Hello world!
+      </Text>
 
       <StatusBar style='auto' />
     </View>
