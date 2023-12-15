@@ -7,6 +7,7 @@ import { Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import fontsDeclaration from '@/fonts/fontsDeclaration';
+import { SettingsScreen } from '@/screens';
 import { flexCenter } from '@/styles/tailwind/utilities';
 
 SplashScreen.preventAutoHideAsync();
@@ -48,34 +49,7 @@ const Application = () => {
         paddingRight: right,
       }}
     >
-      <Text
-        className={'text-white'}
-        style={{
-          fontSize: 30,
-        }}
-      >
-        System font
-      </Text>
-
-      <Text
-        className={'text-white'}
-        style={{
-          fontFamily: fontsDeclaration.Kalnia,
-          fontSize: 30,
-        }}
-      >
-        Kalnia font
-      </Text>
-
-      <Text
-        className={'text-white'}
-        style={{
-          fontFamily: fontsDeclaration.SFProDisplay.Bold,
-          fontSize: 30,
-        }}
-      >
-        SF Pro Display font (Bold)
-      </Text>
+      <SettingsScreen />
 
       <StatusBar style='auto' />
     </View>
