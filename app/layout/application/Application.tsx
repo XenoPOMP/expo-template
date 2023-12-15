@@ -47,10 +47,6 @@ const Application = () => {
         paddingRight: right,
       }}
     >
-      <HomeScreen />
-
-      <SettingsScreen />
-
       <StatusBar style='auto' />
     </View>
   );
