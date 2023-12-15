@@ -42,8 +42,8 @@ const Application = () => {
       onLayout={onLayoutRootView}
       className={cn('bg-purple-950 h-full', flexCenter)}
       style={{
-        paddingTop: top,
-        paddingBottom: bottom,
+        // paddingTop: top,
+        // paddingBottom: bottom,
         paddingLeft: left,
         paddingRight: right,
       }}
