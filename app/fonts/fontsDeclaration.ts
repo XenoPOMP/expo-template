@@ -1,23 +1,19 @@
 type WithItalic<T extends string> = T | `${T}Italic`;
 
-type FontDeclaration = Record<
-  string,
-  Partial<
-    | Record<
-        | WithItalic<'Ultralight'>
-        | WithItalic<'Thin'>
-        | WithItalic<'Light'>
-        | WithItalic<'Regular'>
-        | WithItalic<'Medium'>
-        | WithItalic<'Semibold'>
-        | WithItalic<'Bold'>
-        | WithItalic<'Heavy'>
-        | WithItalic<'Black'>,
-        string
-      >
-    | string
-  >
+type FontWeights = Record<
+  | WithItalic<'Ultralight'>
+  | WithItalic<'Thin'>
+  | WithItalic<'Light'>
+  | WithItalic<'Regular'>
+  | WithItalic<'Medium'>
+  | WithItalic<'Semibold'>
+  | WithItalic<'Bold'>
+  | WithItalic<'Heavy'>
+  | WithItalic<'Black'>,
+  string
 >;
+
+type FontDeclaration = Record<string, Partial<FontWeights> | string>;
 
 /**
  * Get names of each style for each font in project.
