@@ -3,12 +3,10 @@ import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import { useCallback } from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import fontsDeclaration from '@/fonts/fontsDeclaration';
-import { SettingsScreen } from '@/screens';
-import { flexCenter } from '@/styles/tailwind/utilities';
+import { HomeScreen, SettingsScreen } from '@/screens';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -49,6 +47,8 @@ const Application = () => {
         paddingRight: right,
       }}
     >
+      <HomeScreen />
+
       <SettingsScreen />
 
       <StatusBar style='auto' />
