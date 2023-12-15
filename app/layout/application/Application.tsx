@@ -18,9 +18,9 @@ const Application = () => {
         paddingRight: right,
       }}
     >
-      <Text className={'text-3xl font-bold text-yellow-500 italic'}>
-        Hello world!
-      </Text>
+      <Text className={'text-2xl text-white'}>Hello world!</Text>
+
+      <Text className={'text-2xl text-white'}>Kalnia font</Text>
 
       <StatusBar style='auto' />
     </View>
