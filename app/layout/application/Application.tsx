@@ -6,7 +6,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { flexCenter } from '@/styles/tailwind/utilities';
 
 const Application = () => {
-  const { top, bottom } = useSafeAreaInsets();
+  const { top, bottom, left, right } = useSafeAreaInsets();
 
   return (
     <View
@@ -14,6 +14,8 @@ const Application = () => {
       style={{
         paddingTop: top,
         paddingBottom: bottom,
+        paddingLeft: left,
+        paddingRight: right,
       }}
     >
       <Text className={'text-3xl font-bold text-yellow-500 italic'}>
