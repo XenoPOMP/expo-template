@@ -12,11 +12,16 @@ const SettingsScreen: VariableFC<typeof View, {}, 'children' | 'style'> = ({
 }) => {
   const { top } = useSafeAreaInsets();
 
+  const padding = 10;
+
   return (
     <View
-      className={cn(className)}
+      className={cn('flex-1', className)}
       style={{
-        paddingTop: top,
+        paddingTop: top + padding,
+        paddingBottom: padding,
+        paddingLeft: padding,
+        paddingRight: padding,
       }}
       {...props}
     >

@@ -7,10 +7,16 @@ import fontsDeclaration from '@/fonts/fontsDeclaration';
 const HomeScreen: FC<{}> = () => {
   const { top } = useSafeAreaInsets();
 
+  const padding = 10;
+
   return (
     <View
+      className={`flex-1`}
       style={{
-        paddingTop: top,
+        paddingTop: top + padding,
+        paddingBottom: padding,
+        paddingLeft: padding,
+        paddingRight: padding,
       }}
     >
       <Text
