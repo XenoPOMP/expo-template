@@ -3,7 +3,6 @@ import {
   useNavigationContainerRef,
 } from '@react-navigation/native';
 import { FC, useEffect, useState } from 'react';
-import { View } from 'react-native';
 
 import { BottomMenu } from '@/components/ui';
 import PrivateNavigation from '@/navigation/PrivateNavigation';
