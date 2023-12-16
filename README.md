@@ -1,7 +1,7 @@
 # Expo template
 
 <p>
-<img alt="GitHub release (latest by SemVer including pre-releases)" src="https://img.shields.io/github/downloads-pre/XenoPOMP/expo-template/latest/total?style=flat&label=Release&color=blue">
+<img alt="Dynamic JSON Badge" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FXenoPOMP%2Fexpo-template%2Fmaster%2Fpackage.json&query=%24.version&label=Latest%20release">
 </p>
 
 <hr/>
