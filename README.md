@@ -1,4 +1,6 @@
-# Expo template
+<h1 style='display: flex; align-items: center; gap: 10px;'>
+<img src="./.repo/images/logo-type-a.svg" style="background: white; padding: 10px;"> Expo template
+</h1>
 
 <p>
 <img alt="Dynamic JSON Badge" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FXenoPOMP%2Fexpo-template%2Fmaster%2Fpackage.json&query=%24.version&label=Latest%20release">
