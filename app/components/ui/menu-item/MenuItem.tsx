@@ -10,6 +10,7 @@ const MenuItem: VariableFC<typeof Pressable, MenuItemProps, 'children'> = ({
   navigate,
   currentRoute,
   onPress,
+  key,
   ...props
 }) => {
   const { icon: Icon } = item;
@@ -24,11 +25,12 @@ const MenuItem: VariableFC<typeof Pressable, MenuItemProps, 'children'> = ({
 
         navigate(item.path);
       }}
+      key={key}
       {...props}
     >
       <Icon
-        size={25}
-        className={cn(isActive ? 'text-purple-800' : 'text-purple-600')}
+        width={25}
+        className={cn(isActive ? 'text-purple-600' : 'text-purple-900')}
       />
     </Pressable>
   );

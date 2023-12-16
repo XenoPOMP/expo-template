@@ -6,6 +6,7 @@ import { FC, useEffect, useState } from 'react';
 import { View } from 'react-native';
 
 import { BottomMenu } from '@/components/ui';
+import PrivateNavigation from '@/navigation/PrivateNavigation';
 
 const Navigation: FC<{}> = () => {
   const [currentRoute, setCurrentRoute] = useState<string | undefined>(
@@ -29,10 +30,11 @@ const Navigation: FC<{}> = () => {
   return (
     <>
       <NavigationContainer ref={navRef}>
-        <></>
+        <PrivateNavigation
+          navigate={navRef.navigate}
+          currentRoute={currentRoute}
+        />
       </NavigationContainer>
-
-      <View className={'bg-red-400'}></View>
 
       {currentRoute && (
         <BottomMenu navigate={navRef.navigate} currentRoute={currentRoute} />

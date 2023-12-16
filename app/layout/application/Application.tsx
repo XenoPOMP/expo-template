@@ -11,8 +11,6 @@ import Navigation from '@/navigation/Navigation';
 SplashScreen.preventAutoHideAsync();
 
 const Application = () => {
-  const { top, bottom, left, right } = useSafeAreaInsets();
-
   const [fontsLoaded, fontError] = useFonts({
     Kalnia: require('../../fonts/google fonts/Kalnia.ttf'),
 
@@ -37,16 +35,7 @@ const Application = () => {
   }
 
   return (
-    <View
-      onLayout={onLayoutRootView}
-      className={cn('bg-purple-950 h-full')}
-      style={{
-        // paddingTop: top,
-        // paddingBottom: bottom,
-        paddingLeft: left,
-        paddingRight: right,
-      }}
-    >
+    <View onLayout={onLayoutRootView} className={cn('bg-purple-950 h-full')}>
       <Navigation />
 
       <StatusBar style='auto' />
