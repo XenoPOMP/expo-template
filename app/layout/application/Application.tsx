@@ -12,7 +12,7 @@ SplashScreen.preventAutoHideAsync();
 
 const Application = () => {
   const [fontsLoaded, fontError] = useFonts({
-    Kalnia: require('../../fonts/google fonts/Kalnia.ttf'),
+    Kalnia: require('@/fonts/google fonts/Kalnia.ttf'),
 
     'SF-Pro-Display-Regular': require('@/fonts/SFProDisplay/SF-Pro-Display-Regular.otf'),
     'SF-Pro-Display-Regular-Italic': require('@/fonts/SFProDisplay/SF-Pro-Display-RegularItalic.otf'),
