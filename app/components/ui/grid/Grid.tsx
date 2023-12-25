@@ -13,12 +13,8 @@ import {
 
 export const GridContext = createContext<IGridContext>({} as IGridContext);
 
-const Grid: VariableFC<
-  typeof View,
-  GridProps & { style?: ViewStyle },
-  'style'
-> & {
-  Cell: VariableFC<typeof View, GridCellProps & { style?: ViewStyle }, 'style'>;
+const Grid: VariableFC<typeof View, GridProps> & {
+  Cell: VariableFC<typeof View, GridCellProps>;
 } = ({ className, children, columns = 1, rows = 1, ...props }) => {
   rows = constraintNumber(rows, { minValue: 0, maxValue: rows });
   columns = constraintNumber(columns, {
@@ -60,8 +56,10 @@ Grid.Cell = ({
     maxValue: columns,
   });
 
+  // const widthPercent = (gridColumns / columns) * 100;
+
   return (
-    <View className={cn(className)} {...props}>
+    <View className={cn(``, className)} {...props}>
       {children}
     </View>
   );
