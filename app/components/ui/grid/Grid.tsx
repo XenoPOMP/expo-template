@@ -1,7 +1,7 @@
 import { VariableFC } from '@xenopomp/advanced-types';
 import cn from 'classnames';
 import { createContext, useContext, useEffect } from 'react';
-import { View, ViewStyle } from 'react-native';
+import { Text, View, ViewStyle } from 'react-native';
 
 import { constraintNumber } from '@/utils';
 
@@ -20,6 +20,12 @@ const Grid: VariableFC<
 > & {
   Cell: VariableFC<typeof View, GridCellProps & { style?: ViewStyle }, 'style'>;
 } = ({ className, children, columns = 1, rows = 1, ...props }) => {
+  rows = constraintNumber(rows, { minValue: 0, maxValue: rows });
+  columns = constraintNumber(columns, {
+    minValue: 0,
+    maxValue: columns,
+  });
+
   return (
     <GridContext.Provider
       value={{
@@ -46,6 +52,13 @@ Grid.Cell = ({
   const {
     template: { columns, rows },
   } = useContext(GridContext);
+
+  // Constraint grid values
+  gridRows = constraintNumber(gridRows, { minValue: 0, maxValue: rows });
+  gridColumns = constraintNumber(gridColumns, {
+    minValue: 0,
+    maxValue: columns,
+  });
 
   return (
     <View className={cn(className)} {...props}>
