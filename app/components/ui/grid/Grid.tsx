@@ -5,7 +5,11 @@ import { View, ViewStyle } from 'react-native';
 
 import { constraintNumber } from '@/utils';
 
-import { type GridProps, type IGridContext } from './grid.types';
+import {
+  type GridCellProps,
+  type GridProps,
+  type IGridContext,
+} from './grid.types';
 
 export const GridContext = createContext<IGridContext>({} as IGridContext);
 
@@ -14,7 +18,7 @@ const Grid: VariableFC<
   GridProps & { style?: ViewStyle },
   'style'
 > & {
-  Cell: VariableFC<typeof View, {} & { style?: ViewStyle }, 'style'>;
+  Cell: VariableFC<typeof View, GridCellProps & { style?: ViewStyle }, 'style'>;
 } = ({ className, children, columns = 1, rows = 1, ...props }) => {
   return (
     <GridContext.Provider
@@ -32,19 +36,19 @@ const Grid: VariableFC<
   );
 };
 
-Grid.Cell = ({ className, children, style: { ...otherStyles }, ...props }) => {
+Grid.Cell = ({
+  className,
+  children,
+  gridRows = 1,
+  gridColumns = 1,
+  ...props
+}) => {
   const {
     template: { columns, rows },
   } = useContext(GridContext);
 
   return (
-    <View
-      className={cn(className)}
-      style={{
-        ...otherStyles,
-      }}
-      {...props}
-    >
+    <View className={cn(className)} {...props}>
       {children}
     </View>
   );
