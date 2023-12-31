@@ -20,7 +20,7 @@ const appSettingsSlice = createSlice({
   name: 'appSettings',
   initialState,
   reducers: {
-    simpleAction(state, action: ReduxAction<number>) {},
+    // simpleAction(state, action: ReduxAction<number>) {},
 
     /** Change application`s language. */
     changeLang(state, action: ReduxAction<AppSettings['language']>) {
@@ -30,5 +30,5 @@ const appSettingsSlice = createSlice({
 });
 
 export default appSettingsSlice.reducer;
-export const { simpleAction, changeLang } = appSettingsSlice.actions;
+export const { changeLang } = appSettingsSlice.actions;
 export const initialAppSettings = appSettingsSlice.getInitialState();
