@@ -1,1 +1,1 @@
-export interface Localization {}
+export type Localization = Record<'helloWorld', string>;

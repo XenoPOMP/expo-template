@@ -5,4 +5,6 @@ import { Localization } from '@/localization';
  *
  * Русская локализация для приложения.
  */
-export const ru: Localization = {};
+export const ru: Localization = {
+  helloWorld: 'Привет, мир!',
+};
