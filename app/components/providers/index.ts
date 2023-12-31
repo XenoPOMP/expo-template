@@ -1,3 +1,3 @@
-import I18nProvider from './i18n-provider/I18nProvider';
+import I18nProvider, { I18nContext } from './i18n-provider/I18nProvider';
 
-export { I18nProvider };
+export { I18nProvider, I18nContext };
