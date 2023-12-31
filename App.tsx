@@ -10,14 +10,14 @@ const queryClient = new QueryClient();
 
 export default function App() {
   return (
-    <I18nProvider>
-      <SafeAreaProvider>
-        <QueryClientProvider client={queryClient}>
-          <ReduxProvider store={store}>
+    <SafeAreaProvider>
+      <QueryClientProvider client={queryClient}>
+        <ReduxProvider store={store}>
+          <I18nProvider>
             <Application />
-          </ReduxProvider>
-        </QueryClientProvider>
-      </SafeAreaProvider>
-    </I18nProvider>
+          </I18nProvider>
+        </ReduxProvider>
+      </QueryClientProvider>
+    </SafeAreaProvider>
   );
 }
