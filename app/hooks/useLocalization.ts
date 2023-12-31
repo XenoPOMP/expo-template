@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 
 import { I18nContext } from '@/components/providers';
-import { Localization } from '@/localization';
+import { ILocalization } from '@/localization';
 import { useAppDispatch } from '@/redux/hooks';
 import { AppSettings, changeLang } from '@/redux/reducers/appSettingsSlice';
 
@@ -10,7 +10,13 @@ interface UseLocalizationResult {
   changeLanguage: (newLang: AppSettings['language']) => void;
 
   /** Get locale from I18n. */
-  loc: (key: keyof Localization) => Localization[typeof key];
+  loc: (key: keyof ILocalization) => ILocalization[typeof key];
+
+  /** Current app`s locale (non-redux). */
+  currentLocale: string;
+
+  /** Device`s current locale. */
+  deviceLocale: string;
 }
 
 const useLocalization = (): UseLocalizationResult => {
@@ -27,7 +33,7 @@ const useLocalization = (): UseLocalizationResult => {
     return i18n.t(key);
   };
 
-  return { changeLanguage, loc };
+  return { changeLanguage, loc, deviceLocale };
 };
 
 export default useLocalization;

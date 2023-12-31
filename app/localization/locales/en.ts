@@ -1,8 +1,8 @@
-import { Localization } from '@/localization';
+import { ILocalization } from '@/localization';
 
 /**
  * English localization for app.
  */
-export const en: Localization = {
+export const en: ILocalization = {
   helloWorld: 'Hello world!',
 };

@@ -1,1 +1,1 @@
-export { Localization } from './Localization';
+export { ILocalization } from './ILocalization';
