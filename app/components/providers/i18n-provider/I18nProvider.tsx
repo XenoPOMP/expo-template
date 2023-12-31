@@ -1,8 +1,10 @@
 import { PropsWith } from '@xenopomp/advanced-types';
+import * as Localization from 'expo-localization';
 import { I18n } from 'i18n-js';
-import { ContextType, FC, useMemo } from 'react';
+import { ContextType, FC, useEffect, useMemo } from 'react';
 
 import locales from '@/localization/locales';
+import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 
 import I18nContext from './I18n.context';
 
@@ -14,11 +16,22 @@ import I18nContext from './I18n.context';
  * @constructor
  */
 const I18nProvider: FC<PropsWith<'children', {}>> = ({ children }) => {
+  /** Select data from redux. */
+  const { language } = useAppSelector(state => state.appSettings);
+
+  /** Redux dispatch func. */
+  const dispatch = useAppDispatch();
+
   /** Init memoized i18n object. */
   const i18n = useMemo(() => new I18n(locales), []);
 
   /** Enable fallback if language`s locales are missing. */
   i18n.enableFallback = true;
+
+  /** Change locale each time redux selector changes. */
+  useEffect(() => {
+    i18n.locale = language ?? Localization.locale;
+  }, [language]);
 
   return (
     <I18nContext.Provider
