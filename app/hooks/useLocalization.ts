@@ -1,3 +1,4 @@
+import * as Localization from 'expo-localization';
 import { useContext } from 'react';
 
 import { I18nContext } from '@/components/providers';
@@ -33,7 +34,12 @@ const useLocalization = (): UseLocalizationResult => {
     return i18n.t(key);
   };
 
-  return { changeLanguage, loc, deviceLocale };
+  return {
+    changeLanguage,
+    loc,
+    currentLocale: i18n.locale,
+    deviceLocale: Localization.getLocales()[0].languageCode,
+  };
 };
 
 export default useLocalization;
