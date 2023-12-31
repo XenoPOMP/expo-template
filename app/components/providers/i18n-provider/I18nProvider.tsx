@@ -19,9 +19,6 @@ const I18nProvider: FC<PropsWith<'children', {}>> = ({ children }) => {
   /** Select data from redux. */
   const { language } = useAppSelector(state => state.appSettings);
 
-  /** Redux dispatch func. */
-  const dispatch = useAppDispatch();
-
   /** Init memoized i18n object. */
   const i18n = useMemo(() => new I18n(locales), []);
 
