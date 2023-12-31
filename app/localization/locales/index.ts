@@ -9,6 +9,7 @@ import { ru } from './ru';
  */
 const locales = {
   en,
+  ru,
 } satisfies Defined<ConstructorParameters<typeof I18n>[0]>;
 
 export default locales;
