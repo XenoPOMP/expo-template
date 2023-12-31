@@ -11,7 +11,7 @@ interface UseLocalizationResult {
   changeLanguage: (newLang: AppSettings['language']) => void;
 
   /** Get locale from I18n. */
-  loc: (key: keyof ILocalization) => ILocalization[typeof key];
+  loc: (key: keyof ILocalization) => string;
 
   /** Current app`s locale (non-redux). */
   currentLocale: string;
