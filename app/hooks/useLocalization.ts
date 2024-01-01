@@ -29,7 +29,8 @@ interface UseLocalizationResult {
  * import { useLocalization } from '@/hooks';
  *
  * const LocalizedComponent: FC = () => {
- *   const { loc } = useLocalization();
+ *   const { loc, changeLanguage, currentLocale, deviceLocale } =
+ *     useLocalization();
  *
  *   return (
  *    <View>
