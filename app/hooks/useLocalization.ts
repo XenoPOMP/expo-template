@@ -20,6 +20,26 @@ interface UseLocalizationResult {
   deviceLocale: string;
 }
 
+/**
+ * This hook allows you to interact with localization context.
+ *
+ * @example
+ * import { FC } from 'react';
+ * import { Text, View } from 'react-native';
+ * import { useLocalization } from '@/hooks';
+ *
+ * const LocalizedComponent: FC = () => {
+ *   const { loc } = useLocalization();
+ *
+ *   return (
+ *    <View>
+ *       <Text>
+ *         {loc('helloWorld')}
+ *       </Text>
+ *     </View>
+ *   );
+ * }
+ */
 const useLocalization = (): UseLocalizationResult => {
   const { i18n } = useContext(I18nContext);
 
