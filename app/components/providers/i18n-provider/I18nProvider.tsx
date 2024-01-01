@@ -25,10 +25,10 @@ const I18nProvider: FC<PropsWith<'children', {}>> = ({ children }) => {
   /** Enable fallback if language`s locales are missing. */
   i18n.enableFallback = true;
 
+  i18n.locale = language ?? Localization.locale;
+
   /** Change locale each time redux selector changes. */
-  useEffect(() => {
-    i18n.locale = language ?? Localization.locale;
-  }, [language]);
+  useEffect(() => {}, [language]);
 
   return (
     <I18nContext.Provider

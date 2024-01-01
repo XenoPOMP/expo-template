@@ -8,8 +8,9 @@ import { ru } from './ru';
  * Dictionary of in-app locales.
  */
 const locales = {
+  'en-US': en,
   en,
-  ru,
+  'ru-RU': ru,
 } satisfies Defined<ConstructorParameters<typeof I18n>[0]>;
 
 export default locales;
