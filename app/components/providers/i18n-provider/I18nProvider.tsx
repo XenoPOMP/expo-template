@@ -27,7 +27,7 @@ const I18nProvider: FC<PropsWith<'children', {}>> = ({ children }) => {
 
   /** Change locale each time redux selector changes. */
   useEffect(() => {
-    i18n.locale = Localization.locale;
+    i18n.locale = language ?? Localization.locale;
   }, [language]);
 
   return (
