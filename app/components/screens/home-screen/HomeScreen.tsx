@@ -3,11 +3,14 @@ import { Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import fontsDeclaration from '@/fonts/fontsDeclaration';
+import { useLocalization } from '@/hooks';
 
 const HomeScreen: FC<{}> = () => {
   const { top } = useSafeAreaInsets();
 
   const padding = 10;
+
+  const { loc } = useLocalization();
 
   return (
     <View
@@ -25,7 +28,7 @@ const HomeScreen: FC<{}> = () => {
           fontFamily: fontsDeclaration.SFProDisplay.Regular,
         }}
       >
-        Home
+        {loc('helloWorld')}
       </Text>
     </View>
   );
