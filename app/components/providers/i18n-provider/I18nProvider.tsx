@@ -20,7 +20,7 @@ const I18nProvider: FC<PropsWith<'children', {}>> = ({ children }) => {
   const { language } = useAppSelector(state => state.appSettings);
 
   /** Init memoized i18n object. */
-  const i18n = useMemo(() => new I18n(locales), []);
+  const i18n = useMemo(() => new I18n(locales), [language]);
 
   /** Enable fallback if language`s locales are missing. */
   i18n.enableFallback = true;
