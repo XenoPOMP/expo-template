@@ -25,7 +25,9 @@ const I18nProvider: FC<PropsWith<'children', {}>> = ({ children }) => {
   /** Enable fallback if language`s locales are missing. */
   i18n.enableFallback = true;
 
+  /** Change language. */
   i18n.locale = language ?? Localization.locale;
+  console.log(`Current locale: ${i18n.locale}`);
 
   /** Change locale each time redux selector changes. */
   useEffect(() => {}, [language]);
