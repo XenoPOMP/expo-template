@@ -1,27 +1,19 @@
+import { VariableFC } from '@xenopomp/advanced-types';
 import { FC } from 'react';
 import { Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
+import { LayoutScreen } from '@/components/screens';
 import fontsDeclaration from '@/fonts/fontsDeclaration';
 import { useLocalization } from '@/hooks';
 
-const HomeScreen: FC<{}> = () => {
-  const { top } = useSafeAreaInsets();
-
-  const padding = 10;
-
+const HomeScreen: VariableFC<typeof LayoutScreen, {}, 'children' | 'title'> = ({
+  ...props
+}) => {
   const { loc } = useLocalization();
 
   return (
-    <View
-      className={`flex-1`}
-      style={{
-        paddingTop: top + padding,
-        paddingBottom: padding,
-        paddingLeft: padding,
-        paddingRight: padding,
-      }}
-    >
+    <LayoutScreen title={'Main'} {...props}>
       <Text
         className={'text-white text-2xl'}
         style={{
@@ -30,7 +22,7 @@ const HomeScreen: FC<{}> = () => {
       >
         {loc('helloWorld')}
       </Text>
-    </View>
+    </LayoutScreen>
   );
 };
 

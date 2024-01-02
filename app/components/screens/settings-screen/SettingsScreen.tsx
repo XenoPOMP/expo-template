@@ -4,27 +4,16 @@ import { FC } from 'react';
 import { Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
+import { LayoutScreen } from '@/components/screens';
 import fontsDeclaration from '@/fonts/fontsDeclaration';
 
-const SettingsScreen: VariableFC<typeof View, {}, 'children' | 'style'> = ({
-  className,
-  ...props
-}) => {
-  const { top } = useSafeAreaInsets();
-
-  const padding = 10;
-
+const SettingsScreen: VariableFC<
+  typeof LayoutScreen,
+  {},
+  'title' | 'children'
+> = ({ ...props }) => {
   return (
-    <View
-      className={cn('flex-1', className)}
-      style={{
-        paddingTop: top + padding,
-        paddingBottom: padding,
-        paddingLeft: padding,
-        paddingRight: padding,
-      }}
-      {...props}
-    >
+    <LayoutScreen title={'Settings'} {...props}>
       <Text
         className={'text-white'}
         style={{
@@ -53,7 +42,7 @@ const SettingsScreen: VariableFC<typeof View, {}, 'children' | 'style'> = ({
       >
         SF Pro Display font (Bold)
       </Text>
-    </View>
+    </LayoutScreen>
   );
 };
 
