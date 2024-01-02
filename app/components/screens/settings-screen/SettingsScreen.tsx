@@ -12,38 +12,7 @@ const SettingsScreen: VariableFC<
   {},
   'title' | 'children'
 > = ({ ...props }) => {
-  return (
-    <LayoutScreen title={'Settings'} {...props}>
-      <Text
-        className={'text-white'}
-        style={{
-          fontSize: 30,
-        }}
-      >
-        System font
-      </Text>
-
-      <Text
-        className={'text-white'}
-        style={{
-          fontFamily: fontsDeclaration.Kalnia,
-          fontSize: 30,
-        }}
-      >
-        Kalnia font
-      </Text>
-
-      <Text
-        className={'text-white'}
-        style={{
-          fontFamily: fontsDeclaration.SFProDisplay.Bold,
-          fontSize: 30,
-        }}
-      >
-        SF Pro Display font (Bold)
-      </Text>
-    </LayoutScreen>
-  );
+  return <LayoutScreen title={'Settings'} {...props}></LayoutScreen>;
 };
 
 export default SettingsScreen;
